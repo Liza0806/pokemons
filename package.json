@@ -1,5 +1,6 @@
 {
   "name": "pokemons",
+   "homepage": "http://Liza0806.github.io/pokemons",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
