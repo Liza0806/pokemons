@@ -17,4 +17,3 @@ export const fetchPokemonsList = createAsyncThunk(
       return response;
     }
   );
-  

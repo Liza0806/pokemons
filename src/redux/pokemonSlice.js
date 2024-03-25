@@ -9,6 +9,10 @@ reducers:  {
     setPokemons: (state, action) => {
         state.pokemons = action.payload;
       },
+    showMore: (state)=>{
+        console.log(state.page, "state.page")
+    state.page += state.page
+      }
     },
 extraReducers: (builder) => {
     builder
@@ -43,5 +47,5 @@ extraReducers: (builder) => {
     })
 }})
 // "https://pokeapi.co/api/v2/
-export const {setPokemons} = pokemonSlice.actions;
+export const { setPokemons, showMore} = pokemonSlice.actions;
 export default pokemonSlice.reducer;
