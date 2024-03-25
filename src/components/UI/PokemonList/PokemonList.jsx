@@ -9,10 +9,10 @@ const perPage = useSelector((state)=> state.pokemons.perPage);
 console.log(page, perPage, 'page, perPage')
   return (
     <ForPokemons>
-      {pokemons.map((pokemon) => {
+      {pokemons.map((pokemon, index=0) => {
       //  console.log(page, perPage, pokemon.id, 'page, perPage, index')
-      
-        if(pokemon.id < page * perPage){
+      index++
+        if(index < page * perPage){
           return   <PokemonCard key={pokemon.id} pokemon={pokemon} />
         }  return null;
      }

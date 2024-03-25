@@ -28,6 +28,7 @@ const Main = () => {
 
   let filteredPokemons = pokemons;
   if (pokemons) {
+    console.log(pokemons.length)
     filteredPokemons = pokemons.filter((pokemon) =>
       pokemon.name.includes(filter)
     );
