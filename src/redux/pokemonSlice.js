@@ -12,6 +12,9 @@ reducers:  {
     showMore: (state)=>{
         console.log(state.page, "state.page")
     state.page += state.page
+      },
+      addToFavorites: (state, action)=> {
+        state.favorites = [...state.favorites, action.payload]
       }
     },
 extraReducers: (builder) => {
@@ -38,7 +41,7 @@ extraReducers: (builder) => {
         state.pokemons = action.payload
         state.isLoading = false
        
-        console.log(action.payload)
+       // console.log(action.payload)
     })
     .addCase(fetchPokemonsList.rejected, (state, action) => {
         state.isLoading = false
@@ -47,5 +50,5 @@ extraReducers: (builder) => {
     })
 }})
 // "https://pokeapi.co/api/v2/
-export const { setPokemons, showMore} = pokemonSlice.actions;
+export const { setPokemons, showMore, addToFavorites} = pokemonSlice.actions;
 export default pokemonSlice.reducer;

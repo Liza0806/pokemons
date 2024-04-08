@@ -3,6 +3,7 @@ import { Abilities } from "../Abilities/Abilities";
 import { StyledPokemonInfo } from "./PokemonInfo.styled";
 import { ReactSVG } from "react-svg";
 import favorite from "../../../svg/favourite.svg";
+import { AddToFavorite } from "../AddToFavorite/AddToFavorite";
 
 export const PokemonInfo = () => {
   const pokemonItem = useSelector((state) => state.pokemons.pokemonItem);
@@ -14,10 +15,7 @@ export const PokemonInfo = () => {
     <StyledPokemonInfo>
       <div>
         <div>
-          <button>
-            <ReactSVG src={favorite} />
-            add to favorite
-          </button>
+         <AddToFavorite pokemon={pokemonItem}/>
         </div>
         <div>
           <p>weight: {pokemonItem.weight}</p>
@@ -30,9 +28,9 @@ export const PokemonInfo = () => {
             })}
         </div>
         <div>
-          {" "}
+         
           <img
-            src={pokemonItem?.sprites?.showdown?.front_default}
+            src={pokemonItem?.sprites?.other?.showdown?.front_default}
             alt={pokemonItem.name}
           />
         </div>

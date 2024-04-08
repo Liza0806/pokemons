@@ -4,15 +4,20 @@ import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { PokemonItem } from "./components/pages/PokemonItem/PokemonItem";
 import { FavoritePokemons } from "./components/pages/FavoritePokemons/FavoritePokemons";
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "./components/variables/theme";
+import { useSelector } from "react-redux";
 
 const Main = React.lazy(() => import('./components/pages/Main/Main'));
 
 function App() {
+ 
   return (
     <div className="App">
       <div className="App">
-        <Suspense fallback={<h1>Loading!</h1>}>
+        {/* <ThemeProvider theme={theme}> */}
+            <Suspense fallback={<h1>Loading!</h1>}>
           <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Main />} />
@@ -21,6 +26,8 @@ function App() {
           </Route>
         </Routes>
      </Suspense>
+        {/* </ThemeProvider> */}
+      
       </div>
     </div>
   );

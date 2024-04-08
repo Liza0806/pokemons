@@ -18,7 +18,7 @@ display: inline;
     display: flex;
     gap: 10px;
   }
-button {
+/* button {
   background-color:transparent;
   border: none;
   outline: none;
@@ -33,7 +33,7 @@ svg {
 
   &:hover{
     stroke: #ffffff;
-  }
-}
+  } */
+/* } */
 
 `;

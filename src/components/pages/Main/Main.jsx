@@ -18,11 +18,11 @@ const Main = () => {
   let pokemons = useSelector((state) => state.pokemons.pokemons);
  
   useEffect(() => {
-    const pokemonsLS = JSON.parse(localStorage.getItem("pokemons"));
-    if (pokemonsLS) {
-      dispatch(setPokemons(pokemonsLS));
-      return;
-    }
+    // const pokemonsLS = JSON.parse(localStorage.getItem("pokemons"));
+    // if (pokemonsLS) {
+    //   dispatch(setPokemons(pokemonsLS));
+    //   return;
+    // }
     dispatch(fetchPokemonsList());
   }, []);
 

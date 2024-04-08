@@ -22,7 +22,7 @@ export const PokemonItem = () => {
           <h1>{pokemonItem.name}</h1>
 
           <img
-            src={pokemonItem?.sprites?.["official-artwork"]?.front_default}
+            src={pokemonItem?.sprites?.other?.["official-artwork"]?.front_default}
             alt={pokemonItem.name}
           />
           <PokemonInfo />
