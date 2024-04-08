@@ -17,13 +17,12 @@ export const addToFavorite = async ({_id}) => {
   try {
     const responsePokemon = await axios.get(`https://pokemonsbackend-t9op.onrender.com/api/pokemons/${_id}`);
     const currentData = responsePokemon.data;
-  //  console.log(currentData, 'currentData')
+    console.log(currentData, 'currentData')
     const updatedData = {
-      ...currentData,
       favorite: !currentData.favorite
     };
     console.log(updatedData, 'updatedData')
-    const response = await axios.put(`https://pokemonsbackend-t9op.onrender.com/api/pokemons/${_id}`, updatedData)
+    const response = await axios.patch(`https://pokemonsbackend-t9op.onrender.com/api/pokemons/${_id}`, updatedData)
     console.log('try patch or put')
     return response.data;
   }
